@@ -1,4 +1,4 @@
-## [1.0.9] - 2025-09-05
+## [v1.0.9-alpha] - 2025-09-05
 
 ### Added
 - Added: Node Render Previews, nodes will display a small preview of their output to help speed up workflows
@@ -58,7 +58,7 @@
 - Project Manager database is not stable and will be replaced with a new system in the future
 - Many nodes are still experimental, and some designs / layouts are not complete
 
-## [1.0.8] - 2025-05-15
+## [v1.0.8-alpha] - 2025-05-15
 
 ### Changed
 - Drawing Studio now uses Java 24
@@ -75,7 +75,7 @@
 - Fixed: LBG PFMs not clearing the canvas after each iteration
 - Fixed: CMYK not displaying preview while the drawing is being generated
 
-## [1.0.7] - 2025-05-03
+## [v1.0.7-alpha] - 2025-05-03
 macOS: DrawingStudio now requires macOS 11+
 
 ### Added
@@ -115,7 +115,7 @@ macOS: DrawingStudio now requires macOS 11+
 - Large portions of the codebase have been completed re-designed overhauled so expect more instability/bugs, it also breaks compatibility projects from previous versions
 - Multiple features are also currently broken / not complete, including workflows, scripting and CLI
 
-## [1.0.6] - 2025-01-24
+## [v1.0.6-alpha] - 2025-01-24
 
 ### Added
 - Added 'Process Folder' - for automatically processing folders of files and reacting to changes
@@ -141,7 +141,7 @@ macOS: DrawingStudio now requires macOS 11+
 - Fixed viewport sizing not reflecting image dimensions properly when switching between images of different sizes
 - Fixed simple sketch example project not opening
 
-## [1.0.5] - 2025-01-15
+## [v1.0.5-alpha] - 2025-01-15
  
 ### Added
 - Added 'Data Switch' node to switch between two data inputs
@@ -169,7 +169,7 @@ macOS: DrawingStudio now requires macOS 11+
 - Original Colour pen when using Sketch Sweeping Curves
 - Simple sketch example project not opening
 
-## [1.0.4] - 2025-01-10
+## [v1.0.4-alpha] - 2025-01-10
 
 ### Added
 - New 'Trigger Connector' Node: for re-routing trigger links
@@ -193,7 +193,7 @@ macOS: DrawingStudio now requires macOS 11+
 - Conditional + Trigger Gates not saving their Gate Type
 - Option style settings not saving properly
 
-## [1.0.3] - 2025-01-03
+## [v1.0.3-alpha] - 2025-01-03
 
 ### Changed
 - Improved Geometry Clipping performance
@@ -202,9 +202,9 @@ macOS: DrawingStudio now requires macOS 11+
 - Application not loading on macOS x86 systems - [#1](https://github.com/SonarSonic/DrawingStudio-Public/issues/1)
 - Fixed GPU Renderer not loading on low powered GPUs
 
-## [1.0.2] - 2023-11-29
+## [v1.0.2-alpha] - 2023-11-29
 
-## [1.0.1] - 2023-10-30
+## [v1.0.1-alpha] - 2023-10-30
 
 ## [1.0.0] - 2023-08-30
 

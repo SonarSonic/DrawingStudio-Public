@@ -1,3 +1,18 @@
+## [v1.0.11-alpha] - 2025-09-28
+
+### Changed
+- Improved: Accuracy of Voronoi Tree, Voronoi Triangulation + Voronoi TSP
+- Improved: Render performance for complex path shapes
+- Improved: Allow providing point lists for Spline and Polyline shapes
+
+### Fixes
+- Fixed: Node Data not being restored properly when reopening projects and copying nodes
+- Fixed: List node not reloading additional created inputs
+- Fixed: Heart shapes not applying position correctly
+- Fixed: Points not being rendered at certain zoom levels with MSAA enabled.
+- Fixed: Grid encoder not displaying any output
+- Fixed: Pinned node control displaying incorrectly when switching projects
+
 ## [v1.0.10-alpha] - 2025-09-12
 
 ### Added

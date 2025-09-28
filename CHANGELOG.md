@@ -1,3 +1,17 @@
+## [v1.0.10-alpha] - 2025-09-12
+
+### Added
+- Added: New 'Align' node for applying Horizontal + Vertical alignment to images, drawings and points.
+- Added: Node Render Previews, to Draw Points, Random Points, Grid Points, Voronoi Diagram + all shape encoder nodes.
+
+### Fixes
+- Fixed: Images being cropped incorrectly when using PFMs
+- Fixed: Viewer flickering when switching between some nodes
+- Fixed: Drawing Exporter Node not completing properly
+- Fixed: Circular Scribbler Node not completing properly
+- Fixed: Particle System + Voronoi Diagrams + other shape encoders generating shapes which exceed the clipping bounds.
+- Fixed: Path length calculations causing the application to freeze when using Sketch Quad Beziers
+
 ## [v1.0.9-alpha] - 2025-09-05
 
 ### Added
@@ -142,7 +156,7 @@ macOS: DrawingStudio now requires macOS 11+
 - Fixed simple sketch example project not opening
 
 ## [v1.0.5-alpha] - 2025-01-15
- 
+
 ### Added
 - Added 'Data Switch' node to switch between two data inputs
 - Added 'Rotate' to Transform Node
@@ -165,7 +179,7 @@ macOS: DrawingStudio now requires macOS 11+
 - Import Image: Not updating when Rotation / Flip Settings are changed
 - Transform Node: Skews not being applied from the anchor point
 - Page Layout Node not loading the users default preset on creation
-- Merge Drawings + Export Drawing showing no preview in the viewport 
+- Merge Drawings + Export Drawing showing no preview in the viewport
 - Original Colour pen when using Sketch Sweeping Curves
 - Simple sketch example project not opening
 
@@ -185,7 +199,7 @@ macOS: DrawingStudio now requires macOS 11+
 
 ### Fixed
 - Transform Node: Fixed issues detecting the data input
-- Node labels not being saved/reloaded 
+- Node labels not being saved/reloaded
 - Right/Left arrow keys not working within nodes using text areas
 - Projects not loading when Node types are removed
 - Trigger sockets not staying highlighted for the same duration as links
@@ -206,6 +220,6 @@ macOS: DrawingStudio now requires macOS 11+
 
 ## [v1.0.1-alpha] - 2023-10-30
 
-## [1.0.0] - 2023-08-30
+## [v1.0.0-alpha] - 2023-08-30
 
 

@@ -1,3 +1,48 @@
+## [v1.0.13-alpha] - 2025-10-22
+### Added
+- Added: 'SVG Importer' node for importing SVG files
+- Added: 'Repeat Along Shape' + 'Repeat Along Line' nodes for creating repeating patterns
+- Added: New Tool Distribution mode 'Ordered' for creating simple alternating patterns
+- Added: Config option to 'Enable OpenGL Noise Generator Shader' which is disabled by default for better support of older hardware
+
+### Changed
+- Improved: Added previews to Align Node
+- Improved: Unlocking the selected node will switch the viewer to the current node if one is selected
+- Improved: Selecting a nodes view icon will now switch the viewed node only, and not lock the selection
+
+### Fixes
+- Fixed: Video Exports not encoding properly
+- Fixed: Animation / Sequence exporter not rendering trimmed path segments
+- Fixed: Animation / Sequence exporter ignoring the end-hold frame options
+- Fixed: 'Superformula' shapes including invalid start point
+- Fixed: Viewport selections failing due to invalid element bounds
+
+## [v1.0.12-alpha] - 2025-10-10
+### Added
+- Added: New Shape Types Spiral, Cross, Superellipse and Superformula
+
+### Changed
+- Improved: Allow providing points for Shape positions
+- Improved: Show only supported Viewport Anti-Aliasing Modes
+- Improved: LBG PFMs speed between iterations
+- Improved: UI Responsiveness during while a PFM is processing
+- Improved: Automatically re-process nodes which depend on the Default Page Layout
+- Overhaul: Migrated internal PFMs to new Shapes API
+- Overhaul: Re-designed Hatch Fill algorithm to use a more efficient algorithm
+
+### Fixes
+- Fixed: Graph node not being restored after being minimized
+- Fixed: Windows displaying resizing cursor after being redocked
+- Fixed: Graph node glitching when being undocked from the window
+- Fixed: Elements in the viewport not being selectable when switching nodes in complex rendering situations
+- Fixed: Image Exporter displaying File Formats incorrectly
+- Fixed: Stippling / Point Elements not outputting in SVG / Vector exports
+- Fixed: Viewport rulers displaying the incorrect scale
+- Fixed: Color Selection drop-down on Nodes cutting off the custom color label
+- Fixed: Voronoi / Triangulation nodes exceeding the clipping bounds
+- Fixed: Viewport Renderer not appearing when the GPU doesn't support MSAA
+- Fixed: Remove MSAA Anti-Aliasing options on all integrated Intel GPUs
+
 ## [v1.0.11-alpha] - 2025-09-28
 
 ### Changed

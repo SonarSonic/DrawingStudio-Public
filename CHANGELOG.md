@@ -1,3 +1,46 @@
+## [v1.0.15-alpha] - 2025-12-09
+
+### Changed
+- Improved: Improved performance of the viewport renderer
+- Improved: Added support for using the macOS Menu Bar which can be configured from User Interface preferences
+- Overhaul: Redesigned internal unit testing frameworks
+
+### Fixes
+- Fixed: Application not starting properly on macOS
+- Fixed: String/Text values not being editable after being entered
+- Fixed: Integer values not being updated properly when using the slider, or text input
+- Fixed: Path fill-rule not being respected by the Viewport Renderer
+- Fixed: Nested alpha / blend modes not being interpretted properly in the SVG Importer
+- Fixed: Edge cases where the SVG Importer would fail to render the SVG.
+
+## [v1.0.14-alpha] - 2025-11-06
+### Added
+- Added: 'Hidden Line Removal' node for simplifying drawings, based on closed shapes
+- Added: 'Apply Tool Distribution' node for applying a tool distribution to a drawing
+- Added: 'Sawtooth Scribbler' node for applying a scribbled sawtooth pattern to an existing shape
+- Added: 'Data Converter' node for quickly converting between data types
+- Added: Notifications Panel, to keep track of recent actions and errors
+- Added: Node Warnings, display errors and warnings above nodes, with suggested actions
+- Added: Project tab selection to the top of the window
+
+### Changed
+- Drawing Studio now uses Java 25
+- Improved: Visual design of Notification Pop-Ups, and unified notification icon and layout
+- Improved: Allow selecting elements in the viewport within the bounds of the current element
+- Improved: Accuracy of shape selection in the viewport, especially when zoomed out
+- Improved: General UI layout / styling / spacing improvements
+
+### Fixes
+- Fixed: Viewport renderer not responding when drawing shapes with negative scaling
+- Fixed: Nodes being deselected after dragging
+- Fixed: Nodes failing silently and appearing to process successfully in certain situations
+- Fixed: List node not outputting updated data when the list size is modified
+- Fixed: Particle System generating two separate paths for reversed particles
+- Fixed: Application crashing while modifying path during drawing generation
+- Fixed: Streamlines PFMs not providing color sample information for Pen Distributions
+- Fixed: PFMs exceeding the bounds of the provided image
+- Fixed: Projects glitching being when opening two projects from the same source
+
 ## [v1.0.13-alpha] - 2025-10-22
 ### Added
 - Added: 'SVG Importer' node for importing SVG files

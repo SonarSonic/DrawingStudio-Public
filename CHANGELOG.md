@@ -1,3 +1,17 @@
+## [v1.0.16-alpha] - 2026-03-19
+### Added
+- Added: 'Blend Factor' to Image Merger node
+
+### Changed
+- Overhaul: Complete rewrite of internal Setting API
+- Overhaul: Huge internal refactoring, rewrites, reorganization of codebase
+- Improved: UI Layout and Styling tweaks
+- Improved: Re-designed PFM Controls style
+- Improved: Design of Graph window to have borderless edges
+
+### Fixes
+- Fixed: Allowed editing of 'Drawing Styles' in Mosaic PFMs
+
 ## [v1.0.15-alpha] - 2025-12-09
 
 ### Changed

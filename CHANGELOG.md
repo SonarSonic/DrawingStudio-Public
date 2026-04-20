@@ -1,3 +1,60 @@
+## [v1.0.18-alpha] - 2026-04-20
+### Added
+- Added: Shape Fill Node for creating filled geometry shapes, supported fills: Hatch Fill, Pattern Fill ()
+- Added: Additional Spiral shape types, Linear, Logarithmic & Parabolic.
+- Added: Export Queue window, shows currently running export tasks and individual file progress, W.I.P.
+
+### Changed
+- Improved: Support for rendering PFMLayers / CMYK Separation while generating in the Viewport
+- Improved: Improved the performance of the Viewport Renderer by supporting 'Volatile Path Rendering', resulting in smoother rendering while using Sketch PFMs
+- Improved: Enhanced slider behavior, when dragging out of the visible range the slider will expand instead of clamping the value.
+- Improved: Window Layout will now be saved / restored with the project, configurable in preferences
+- Improved: Huge improvements 
+- Changed: All nodes now use MILLIMETRES as their default unit of measurement, except PFM / Encoders which still use PIXEL for consistency with DBV3
+
+### Fixed
+- Fixed: Mosaic PFMs support for CMYK separation
+- Fixed: Changing color separation mode affecting all drawing sets
+- Fixed: Application crashing when attempting to modify a shape while the PFM is processing
+- Fixed: Page Layout presets not applying properly
+- Fixed: User interface becomes unresponsive to user actions after prelonged use
+- Fixed: Global penWidth not being applied to Drawing Sets
+- Fixed: Page Color in the Page Setup being wiped when reloading projects
+- Fixed: Node settings not appearing on repeater, position encoders, shape encoders
+- Fixed: Shape encoder nodes not running properly
+- Fixed: Application not responding or crashing when using extremely narrow / wide drawing areas
+- Fixed: Short lines not displaying in the render output
+- Fixed: Voronoi Diagram not running when passed 0 points
+- Fixed: Multiple scaling/sizing issues on various nodes
+- Fixed: Selecting specific Pens/Tools on a node might not restore properly
+- Many more minor fixes and improvements
+
+
+## [v1.0.17-alpha] - 2026-04-10
+### Added
+- Added: Support for saving/restoring custom window layouts, via Window/Layouts
+- Added: Added experimental builds for Linux on aarch64
+
+### Changed
+- Drawing Studio now uses Java 26
+- Improved: Added support for ganging on Vector controls
+- Improved: Added support for switching between individual components / vector on vector controls
+- Improved: Styling of Alpha/Beta labels on nodes
+- Improved: Standardized using three decimal places for all setting/value types
+
+### Fixed
+- Fixed: CMYK Separation failing to complete
+- Fixed: Linux installer crashing with nothing provides 'ocl-icd-opencl-dev'
+- Fixed: Presets in PFM nodes not applying properly
+- Fixed: Controls in the Preference window not shrinking when resizing the window
+- Fixed: Missing preferences for HPGL / GCode configs
+- Fixed: Expressions will now be evaluated properly for each iteration
+- Fixed: Expressions being wiped when trying to modify them, in some situations
+- Fixed: Expressions not being saved across nodes
+- Fixed: Expressions not evaluating all number types properly
+- Fixed: Allow entering values beyond 0-100% in the Viewport Zoom field
+- Fixed: Application crashing when loading script nodes
+
 ## [v1.0.16-alpha] - 2026-03-19
 ### Added
 - Added: 'Blend Factor' to Image Merger node

@@ -1,15 +1,131 @@
+## [v1.1.0-alpha] - 2026-07-23
+Drawing Studio is now Artrinth!
+### Added
+- Added: Additional example projects 'Kaleidoscope Contour', 'Image Contour', 'Voronoi Fill', 'Image Edges Style'
+- Added: Workspaces, the default workspaces are 'Compose', 'Nodes' and 'Output'
+  - These workspaces each contain a customisable window layout setup for streamlining different steps in the design process
+  - 'Compose' - for configuring page layout / input layers
+  - 'Nodes' - for designing the graphs, nodes, viewing the graph structure + node viewport area
+  - 'Output' - for applying processing on the output design e.g. tool/color selection, export
+- Added: Automatic / Manual execution modes for the Node Graph
+  - Automatic: Nodes will re-process when parameters are changed, nodes don't require triggers to run.
+  - Manual: Nodes require a trigger pulse or active trigger to run when a parameter is changed.
+  - Switching between the modes is non-destructive, but trigger links, sockets will be hidden in Automatic mode, nodes which explicitly require manual mode will display a warning.
+  - Most features can be used in Automatic mode, without needing to create trigger links.
+- Added: Graph Runtimes - Overhauled internal Node Graph APIs to seperate graph structure from graph state and execution
+  - Graphs can now be run in separate runtimes/threads, each with their own context window / data inputs
+  - Allowing for highly advanced graphs, which process in parallel and share data between graphs
+  - As well as allowing for future support of advanced features like sub graphs / compound nodes / creating custom processing pipelines
+  - Features making the most of this feature will come in later updates, this was a large overhaul of the internal node graph and rendering system to be thread safe.
+- Added: Graph Input / Outputs
+  - Graphs now provide inputs + outputs parameters which are pinned to the side of the graph window
+  - At the moment the data is pre-setup with the input scene + output scene by default
+  - The graph inputs + output can be unpinned also and moved around like ordinary nodes
+  - - Also related to future improvements for creating custom processing pipelines.
+- Added: Primary Inputs + Outputs
+  - Nodes now feature primary inputs, which are displayed above normal parameters
+  - Primary inputs are typically the data required for the node to operate and are typically 'scene' or 'image' inputs only.
+- Added: Inspector Window
+  - A powerful general purpose way of editing properties on the currently selected element, primarily designed for scene elements in the 'Compose'
+  - Also provides search functionality for finding properties on complex elements
+- Added: Version Control Window
+  - Allows for saving + restoring project versions, with support for naming, rating, notes similar to DBV3
+- Added: Input Layers Window
+  - Allows for viewing the current input layers, e.g. source images, SVGs, mask etc.
+  - Allows for simple operations like selection, deletion, duplication etc.
+- Added: Ability to switch node graphs from the node graph window
+- Added: Dithering Algorithms, available in the new 'Image Stippler' + 'Dither' Nodes
+  - Currently supported dithering methods: Floyd-Steinberg, Sierra, Sierra 2-row, Sierra Lite, Stucki, Atkinson, Burkes, Jarvis-Judice-Nicke, False-Floyd
+- Added: Point Generation Node
+  - Different methods of generating points, current methods 'Random', 'Poisson', 'Spiral', 'Uniform' and 'Concentric'
+  - These nodes work great in combination with geometry generation nodes such as Voronoi Diagram
+- Added: Geodesic Distance Node
+  - Implements methods for calculating Geodesic Distance from an image, with seed points
+  - The implementation uses a hybrid approach to the Fast Marching Method
+  - Works well when combined with the new Contour Detection Node!
+- Added: Contour Detection Node
+  - Add support for detecting levels of contours in a source image
+  - Uses a simple Marching Squares method
+- Added: New GPU Renderer backends Vulkan (Windows + Linux only), Metal (macOS only).
+  - Significant viewport performance improvements over the original OpenGL implementation
+  - The new renderers are now the default on their supported platforms.
+  - Available for viewport / preview / image export
+  - OpenGL will continue to be supported. 
+- Added: New Fill Types: Digital Fill, Inset Fill Type
+  - Digital Fill: Overrides typical fill behaviour and is a purely digital fill to simplify creation of digital art.
+  - Inset Fill: Fills shapes with a series of concentric shapes with customisable spacing
+- Added: New Stroke Types: Solid, Default, Multi-Stroke, Dashed, None
+- Added: Apply Stroke Node, for selecting different stroke types and applying to the input scene / elements.
+- Added: Support for changing the color of frames/group elements
+- Added: Support for opening project files at application startup
+- Added: Support for scene-wide drawing distribution allows arbitrarily created shapes to also be assigned tools automatically
+- Added: Reintroduced Drawing Tool Search tools
+- Added: Additional undo/redo support, for node value changes / node color changes / drawing tool modifications
+- Added: Support for loading legacy project drawings (.drawingbotv3)
+- Added: Right-click menu to sockets showing available actions.
+- Added: Right-click options for Reset / Randomise values on all nodes
+- Added: Ability to create Node Links without dragging, by clicking once on the source socket and once on the destination socket.
+
+### Changed
+- Overhauled: Redesigned user interface controls + styling.
+- Overhauled: Node now feature primary input / outputs.
+- Overhauled: Improved interoperability of nodes, most nodes will now accept any 'scene' data types but may leave some data unprocessed.
+- Overhauled: Merged Drawing/Image variants of Viewer/Import/Export into single nodes.
+- Overhauled: Improved speed and reliability of SVG Import + support for additional svg element types 
+- Improved: Reliability of clicking links in the graph area
+- Improved: Reorganised node categories to simplify finding related nodes
+- Improved: Moved Pinned/Viewed node to the viewport header.
+- Improved: Added additional Image Metadata to Image data overlays, to display resolution, bit-depth
+- Improved: Standardized padding / spacing across the UI
+- Improved: Speed of Image Importer + Exporters, by using a clearer multi-threaded approach and switching to a faster native implementation.
+- Improved: Support for importing 16-bit + 32-bit images without a loss in bit depth
+- Improved: Added 'New' release status labels to new nodes
+- Behavior: Use existing preset editor in Preset Manager when creating new presets
+- Behavior: Open the main window as maximised on first launch by default
+- Changed: Renamed some older windows, 'Search Nodes' is now 'Node Library'
+
+
+### Fixed
+- Fixed: Issue where nodes may flicker when first added to the graph, or one drag creating multiple nodes
+- Fixed: Bug where selecting links might fail if they overlapped a frame.
+- Fixed: Hide graph socket pop-ups when opening another menu / window
+- Fixed: Font section on LBG Letters PFM node
+- Fixed: Projects not re-opening properly after closing and re-opening
+- Fixed: String option settings not appearing properly
+- Fixed: PFMs not displaying in their category in the node selector
+- Fixed: Transform node not affecting output
+- Fixed: Shape node not restoring default settings properly
+- Fixed: Frames sizing not updating when child nodes are removed
+- Fixed: Viewport displaying previous project when closed
+- Fixed: Point Encoders which don't output individual coordinates
+- Fixed: Windows flickering when updating / saving the layout
+- Fixed: Voronoi PFMs creating excessively high density plots + failing to complete
+- Fixed: Mosaic PFMs not execution or failing to complete
+- Fixed: Image segmentation executing additional unnecessary iterations
+- Fixed: Colour sampling in Streamline based PFMs, fixes luminance based Tool Distributions
+- Fixed: Close All Projects + Close Project not always functioning properly
+- Fixed: PFMs creating reference images exceeding the platforms maximum resolution.
+- Fixed: Drawings containing groups rendering incorrectly
+- Fixed: macOS Delete key behavior, always use 'Delete' as the default and not 'Backspace'
+- Fixed: Tone mapping not initalization properly for Adaptive PFMs
+- Fixed: Viewport configuration not saving with individual projects
+- Fixed: Node progress bars staying in a active state after node failure
+- Fixed: Selection order of nodes in the viewport not respecting render order
+- Fixed: Resizing controls not working properly if shift is pressed before first interation
+- Fixed: Focus on selections in viewport being lost during rapid mouse movement.
+
 ## [v1.0.18-alpha] - 2026-04-20
 ### Added
-- Added: Shape Fill Node for creating filled geometry shapes, supported fills: Hatch Fill, Pattern Fill ()
+- Added: Shape Fill Node for creating filled geometry shapes, supported fills: Hatch Fill, Pattern Fill (Lines, Crosshatch, Grid, Concentric Circles, Spiral, Zig Zag, Brick, Waves, Scales)
 - Added: Additional Spiral shape types, Linear, Logarithmic & Parabolic.
-- Added: Export Queue window, shows currently running export tasks and individual file progress, W.I.P.
+- Added: Export Queue window, currently shows running export tasks and individual file progress, full export queuing functional is W.I.P.
 
 ### Changed
 - Improved: Support for rendering PFMLayers / CMYK Separation while generating in the Viewport
 - Improved: Improved the performance of the Viewport Renderer by supporting 'Volatile Path Rendering', resulting in smoother rendering while using Sketch PFMs
 - Improved: Enhanced slider behavior, when dragging out of the visible range the slider will expand instead of clamping the value.
 - Improved: Window Layout will now be saved / restored with the project, configurable in preferences
-- Improved: Huge improvements 
+- Improved: Huge improvements
 - Changed: All nodes now use MILLIMETRES as their default unit of measurement, except PFM / Encoders which still use PIXEL for consistency with DBV3
 
 ### Fixed

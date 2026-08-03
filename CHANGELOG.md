@@ -1,3 +1,55 @@
+## [v1.1.1-alpha] - 2026-08-03
+### Added:
+- Added: New revamped Drawing Synthesis nodes 
+  - 'Letters Encoder', 'Dashes Encoder', 'Delaunay Triangulation', 'Minimum Spanning Tree', 'TSP Encoder', 'Quad Tile Encoder'
+- Added: New Masking/Occlusion operation nodes
+  - 'Hidden Line Removal' node for removing lines which are hidden / occluded behind other elements
+  - 'Boolean Operation' node, for creating merged shapes / drawings, with enhanced support for shape or drawing inputs
+  - 'Apply Mask' node for applying masks to shapes / drawings, to clip their contents
+- Added: New 'Find Intersection Points' for finding points of intersection between two shapes or drawings
+- Added: New spiral shape type 'Fermat'
+
+### Changed
+- Changed: Simplified transform controls for Image / Shape elements, allowed user auto-layout on all elements by default
+- Changed: Renamed AutoLayout options, Scale to fit -> 'Fit', Crop to fit -> 'Fill', Stretch to fit -> 'Stretch'
+- Changed: Merged all separate spiral shapes into a single spiral shape with sub-types for the different spiral types
+- Changed: Standardized all shapes to use a center point as their position parameter
+- Changed: Allow simultaneously editing the same element from the Node Graph, Inspector, Viewport Area, data parameters in the Node Graph will always take priority.
+- Changed: Added support for saving input scenes with the project
+- Changed: Added support for Undo/Redo with Image Elements
+- Changed: Nodes which accept any element type now display as gray when no element is connected
+- Changed: Nodes which expect a primary element type will display it, but still accept alternative elements if provided
+- Changed: Maintain a per-workspace inspectable element in the Inspector
+- Changed: Improved viewport / data parameter related modifications, bound data parameters will remain locked in the viewport
+- Changed: The default color of Point elements + nodes
+- Improved: Reduced memory usage from loading copies of the same image in different threads
+
+### Fixed
+- Fixed: Exports / Renders containing duplicate paths for shapes without fills
+- Fixed: Noise Generation: OpenGL Noise Shader not loading properly and producing no output
+- Fixed: Image created in the Compose workspace not keeping their transforms when rendered in nodes
+- Fixed: Import Image showing no preview / not syncing transformation from the viewport to its settings
+- Fixed: Shape Generator not syncing viewport modifications back to the node
+- Fixed: Nested settings inside other nested settings not applying properly
+- Fixed: Particle System / Contours / Edge Detection / Image Segmentation not clipping generated images to the bounds of the drawing
+- Fixed: Particle System not respecting image bounds when translated
+- Fixed: Check boxes appearing left justified in some situations in the node editor
+- Fixed: Vector parameters not syncing individual components when they are bound to Node Links
+- Fixed: Zero-length lines/segments not being drawn in the viewport/exports
+- Fixed: Project display names appearing blank or overwritten when reopening existing projects
+- Fixed: Viewer not updating when Show Node Previews is disabled
+- Fixed: Tool Distribution not running with non-drawing inputs
+- Fixed: Pinned node not being restored properly on project reload
+- Fixed: Pinned node not being released when deleted.
+- Fixed: Repeat node not rendering any output
+- Fixed: Runnable nodes not being automatically triggered when switching to 'Automatic' execution mode
+- Fixed: Auto-link not prioritizing primary sockets when creating links
+- Fixed: Creating versions in Version Control & version control window corrupting window layout
+- Fixed: Node's clipping their controls if they exceed the default width
+- Fixed: Drawing importer incorrectly clipping nested SVG elements with viewports applied in
+- Fixed: Drawing importer incorrectly scaling stroked path widths
+- Fixed: Prevent Vulkan loading on platforms where no supported GPU is available
+
 ## [v1.1.0-alpha] - 2026-07-23
 Drawing Studio is now Artrinth!
 ### Added

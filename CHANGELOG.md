@@ -1,3 +1,14 @@
+## [v1.1.2-alpha] - 2026-08-08
+### Added:
+- Added: Support for editing Node parameters in the inspector
+
+### Fixed
+- Fixed: Inconsistent selection when clicking node sockets with a check-box
+- Fixed: Page Layout window inconsistently failing to update its preset 
+- Fixed: Node sizing growing infinitely when using non-default scaling on Windows
+- Fixed: Memory leak retaining Image Resources after they're no longer needed
+- Fixed: Noise Generation OpenGL shader not loading shader resources properly
+
 ## [v1.1.1-alpha] - 2026-08-03
 ### Added:
 - Added: New revamped Drawing Synthesis nodes 

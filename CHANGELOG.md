@@ -1,3 +1,11 @@
+## [v1.1.3-alpha] - 2026-08-13
+### Added:
+- Added: 3rd Party License Page, to credit Open Source libraries used to create Artrinth
+
+### Fixed
+- Fixed: Additional fixes for node sizing growing infinitely when using non-default scaling on Windows
+- Fixed: Shape Fill node not rendering any fill when using input from the Shape Generator
+
 ## [v1.1.2-alpha] - 2026-08-08
 ### Added:
 - Added: Support for editing Node parameters in the inspector

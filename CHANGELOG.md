@@ -1,3 +1,43 @@
+## [v1.1.4-alpha] - 2026-08-09
+### Added:
+- Added: Simplified and re-organised the Node Library
+  - The main categories are now 'Images', 'Drawings', 'Shapes', 'Points', 'Values', 'Layout', 'Style', 'Data' and 'Control'
+  - Individual Image Filters + Path Finding Modules will now show up as sub nodes in search results.
+  - Sub-categories are now collapse by default, to help with navigation
+- Added: Ability to convert any parameter into JavaScript expressions
+  - You can now convert parameter values to JavaScript expressions directly by right-clicking and selecting 'Convert to expression'
+  - You can convert back to a constant value by right-clicking and selecting 'Convert to value'
+  - Most JavaScript methods are supported and other parameters can be used as inputs for expressions
+  - When editing an expression the raw data ids for the nodes parameters will be shown
+- Added: Double-clicking a link will now display the node selection menu
+- Added: New window 'Image Filters (Legacy)' which matches behaviour in DBV3 and applies filters to every image in the compose tab.
+- Added: Filter button in the Node Library which allows sorting nodes by Input + Output combinations
+- Added: Controls in the Graph Window for adding nodes or replacing nodes in sequence, the results will show recommended nodes, these controls are
+- Added: Improved node search and selection menus
+  - Recommended node combinations will be shown first, followed by compatible nodes, incompatible nodes will be shown greyed out.
+  - Searching for nodes will also show results for sub-nodes for e.g. Shape / Spiral, Drawing Generator / Sketch Lines.
+  - When searching the category of the node will be shown, and category drop-downs are now hidden.
+- Added: Subgraphs W.I.P, created by selecting a group of nodes and using right-click "Create Subgraph"
+  - Subgraphs allow for creating reusable child graphs, which are not limited to one execution.
+
+### Changed
+- Changed: Merged Circular Scribbler + Sawtooth Scribbler into a single node 'Shape Effect'
+- Changed: Copying selected nodes will now follow the cursor's position
+- Changed: Remove sockets for remaining options which could mutate the node graph structure to prevent graph modification across runtimes
+
+### Fixed
+- Fixed: Triggering exports from the output workspace exporting from the correct viewport
+- Fixed: Color separation processing not respecting input scaling + clipping
+- Fixed: Color Separation modes not respecting source image scaling + alpha
+- Fixed: Color Separation modes color distribution in Auto / Preconfigured mode
+- Fixed: Keyboard Trigger not triggering events consistently across multiple runtimes
+- Fixed: PFM color preferences not being respected properly
+- Fixed: Viewport not rendering CMYK drawings with default rendering opacity
+- Fixed: Viewport + Node Graph not updating their relative mouse position when dragging + zooming
+- Fixed: Prevent variant/structural parameters from accepting socket inputs
+- Fixed: 'Create Node Block Preset' not showing any preview
+- Fixed: Custom Graph Sockets will now be saved and restored with the Graph
+
 ## [v1.1.3-alpha] - 2026-08-13
 ### Added:
 - Added: 3rd Party License Page, to credit Open Source libraries used to create Artrinth

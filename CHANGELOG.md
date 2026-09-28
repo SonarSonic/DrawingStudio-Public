@@ -1,4 +1,28 @@
-## [v1.1.4-alpha] - 2026-08-09
+## [v1.1.5-alpha] - 2026-09-28
+## Added
+- Added: 'Dashboard' Window, for pinning Nodes / Parameters for quick manipulation of the final style
+  - When the dashboard is in edit mode nodes + parameters can be clicked to toggle their visibility
+  - Nodes can also be pinned by right-click + selecting 'Pin to Dashboard'
+- Added: Layout presets for each of the default layouts
+- Added: 'Inset' setting to 'Hatch Fill' & 'Pattern Fill' fill styles
+
+### Changed
+- Improved: Node dragging now matches selection, nodes can be dragged from anywhere without a control
+- Improved: Nodes will now only collapse when clicking their arrow/caret icon
+
+## Fixed
+- Fixed: Removed old 'Default' window layout preset
+- Fixed: Some Dirty Border types not running properly
+- Fixed: Dirty Border not respecting layout when used as an Image Filter node.
+- Fixed: Color picker window not appearing when modifying colors
+- Fixed: Edge Detection node settings not affecting the final output
+- Fixed: Noise Generator node not respecting page margins / layout
+- Fixed: Tool set parameters not restoring the selected Tool Set
+- Fixed: Tool set parameters not syncing the selected Tool Set's name
+- Fixed: 'Threshold' parameter on LBG Stipplers
+- Fixed: Project Explorer + Node Block Library flickering when resizing
+
+## [v1.1.4-alpha] - 2026-09-08
 ### Added:
 - Added: Simplified and re-organised the Node Library
   - The main categories are now 'Images', 'Drawings', 'Shapes', 'Points', 'Values', 'Layout', 'Style', 'Data' and 'Control'
